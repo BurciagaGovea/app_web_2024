@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    text-align: center;
+    background-image: url(img/back1.jpg);
+    color: white;
+    background-size: cover;
+}
+input[type=button]{
+    text-align: center;
+    background-color: rgb(66, 106, 218);
+    color:  white;
+    height: 40px;
+    width: 70px;
+    margin: 25px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+h2{
+    color: rgb(255, 255, 255);
+    margin: 30px;
+    font: italic;
+    font-family:Arial, Helvetica, sans-serif;
+}
+input[type=number]{
+    height: 20px;
+    width: 40px;
+    margin: 10px 0px;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+section{
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+hr{
+    width: 80%;
+    margin: auto;
+}
+#resultado{
+    margin: 30px;
+}
