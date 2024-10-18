@@ -45,6 +45,7 @@ function operacion(event) {
     }
     else
     {
+        document.getElementById('resultado').innerText = `Ingrese solo números, por favor`;
         alert("Disculpe, introduzca solamente numeros");
     }
 
