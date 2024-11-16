@@ -1,0 +1,14 @@
+{% comment %}  SE DEBE HACER collectsatics antes de correr els server y poner el debug en falsepara que Django use esto{% endcomment %}
+
+{% extends 'layouts/layouts.html' %}
+
+{% block title %}
+    Error 404
+{% endblock title %}
+
+{% block content %}
+    <script>
+        alert('Esta página no existe');
+        window.location.replace("{% url 'inicio' %}");
+    </script>
+{% endblock content %}
