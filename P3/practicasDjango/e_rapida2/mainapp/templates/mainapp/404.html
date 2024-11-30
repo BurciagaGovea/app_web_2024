@@ -1,0 +1,8 @@
+{% comment %} Página de error 404 {% endcomment %}
+
+{% block content %}
+    <script>
+        alert('Esta página no existe');
+        window.location.replace("{% url 'inicio' %}");
+    </script>
+{% endblock content %}
