@@ -1,5 +1,5 @@
 """
-WSGI config for e_rapida1 project.
+WSGI config for proyectoUTD project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

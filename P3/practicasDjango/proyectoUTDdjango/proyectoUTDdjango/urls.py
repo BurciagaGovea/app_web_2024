@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin # type: ignore
-from django.urls import path, include, re_path # type: ignore
+from django.urls import path, include # type: ignore
 
 from django.conf import settings #Para debug false # type: ignore
 from django.conf.urls.static import static # type: ignore
@@ -26,15 +26,21 @@ from django.views.static import serve  # type: ignore
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('mainapp.urls')),
+    path('', include('articulos.urls')),
 ]
 
-if not settings.DEBUG:
-    urlpatterns += [
-        re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
-        re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
-    ]
-
+# if not settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # SE DEBE HACER collectsatics antes de correr els server para que esto funcione y debe estar el debug en FALSE
+
+#ruta imagenes
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+
+if not settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
 
 handler404 = 'mainapp.views.error404_2'

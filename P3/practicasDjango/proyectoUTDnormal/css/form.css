@@ -1,0 +1,62 @@
+/* Estilos generales para el formulario */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Alineación de la tabla */
+table {
+    width: 100%;
+    border-spacing: 10px;
+}
+
+/* Estilo para las celdas */
+td {
+    padding: 8px;
+}
+
+/* Estilo para las etiquetas */
+label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* Estilo para los inputs */
+input[type="text"], input[type="password"], input[type="submit"], input[type="reset"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+/* Estilo para el input de tipo submit */
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+/* Estilo para el input de tipo reset */
+input[type="reset"] {
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+
+/* Efecto hover para los botones */
+input[type="submit"]:hover, input[type="reset"]:hover {
+    opacity: 0.9;
+}
+
+/* Estilo para los inputs cuando son autofocalizados */
+input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}

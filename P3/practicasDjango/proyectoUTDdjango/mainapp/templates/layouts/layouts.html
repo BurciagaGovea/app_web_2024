@@ -19,9 +19,20 @@
     <nav>
         <ul>
             <li><a href="{% url "index" %}" >Inicio</a></li>
+            {% if user.email %}
             <li><a href="{% url "acercade" %}">Acerca de</a></li>
             <li><a href="{% url "mision" %}">Mision</a></li>
             <li><a href="{% url "vision" %}">Vision</a></li>
+            <li><a href="{% url "categorias" %}">Categorías</a></li>
+            <li><a href="{% url "articulos" %}">Artículos</a></li>
+            <li><a href="{% url "cerrar" %}">Cerrar sesión</a></li>
+            
+            {% else %}
+
+            <li><a href="{% url "iniciar" %}">Iniciar sesión</a></li>
+            <li><a href="{% url "registrar" %}">Registrarse</a></li>
+
+            {% endif %}
         </ul>
     </nav>
     <section id="content">
@@ -30,7 +41,7 @@
        </div>
     </section>
     <footer>
-        <p>Django con Dagonline &copy; 2024 | Visitado el: {% now "Y-m-d H:i" %}</p>
+        <p>Django con Epson &copy; 2024 | Visitado el: {% now "Y-m-d H:i" %}</p>
     </footer>
 </body>
 </html>

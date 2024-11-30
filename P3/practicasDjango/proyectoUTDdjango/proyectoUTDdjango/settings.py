@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mainapp'
+    'mainapp',
+    'articulos',
 ]
 
 MIDDLEWARE = [
@@ -117,14 +119,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
-    BASE_DIR / "mainapp/static",
-]
+    BASE_DIR / 'mainapp/static'
+    ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-STATIC_ROOT = BASE_DIR / "staticfiles"      #Todo esto es para solucionar que no se carguen los archivos
-MEDIA_URL = '/media/'                       # estáticos cuando el Debug está en false 
-MEDIA_ROOT = BASE_DIR / "media"             # https://stackoverflow.com/questions/5836674/why-does-debug-false-setting-make-my-django-static-files-access-fail
+#media
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / "mainapp/static",
+# ]
+
+# STATIC_ROOT = BASE_DIR / "staticfiles"      #Todo esto es para solucionar que no se carguen los archivos
+# MEDIA_URL = '/media/'                       # estáticos cuando el Debug está en false 
+# MEDIA_ROOT = BASE_DIR / "media"             # https://stackoverflow.com/questions/5836674/why-does-debug-false-setting-make-my-django-static-files-access-fail
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
